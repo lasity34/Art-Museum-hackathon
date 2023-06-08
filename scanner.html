@@ -19,6 +19,7 @@
             }
             body{
                 margin-top: 2rem;
+                padding: 2rem;
             }
         }
     </style>
@@ -61,12 +62,14 @@
 
               {{#each this}}
               <div  style="width: 100%;margin:0;padding: 0;" class=" art-info-container ">
-                <div style="width:100%" class="row">
+                <div style="width:100%;margin:0;padding:0" class="row">
                  
-                        <div style="margin:0" class="col-md-6">
+                        <div style="margin:0;padding:0" class="col-md-6">
                             <img style="height: 80vh;width:100%" src="{{this.img}}" alt="Your Image" class="img-fluid art-img ">
                         </div>
-                        <div style="padding:3rem 1rem 1rem 3rem" class="col-md-6">
+
+
+                        <div style="padding:1rem 3rem 1rem 3rem" class="col-md-6">
                             <h2>{{title}}</h2>
                             <h6 style="color:gray;margin-top: 0.7rem;margin-top:1rem;">{{this.artist}}</h6>
         
