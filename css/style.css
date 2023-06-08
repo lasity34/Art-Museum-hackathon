@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Playfair:wght@700&display=swap');
+
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-family: "Playfair";
+}
+
+.home-navbar{
+    height: 70px;
+}
+.myLogo{
+    height: 40px;
+    width: 40px;
+    margin-top: 25px;
+    margin-right: 25px;
+    border-radius: 50%;
+}
+
+
+#reader__dashboard_section{
+    border:none !important ;
+}
+
+.scanner-wrapper{
+    margin-top: 3rem;
+}
+
+
+/* ******************************************* HERO SECTION STYLING ****************************************** */
+#section-title{
+    font-family: Playfair;
+}
+
+.hero-section{
+    background-color: #FFD467 ;
+    height: 100%;
+    padding-left: 5rem;
+}
+
+.hero-text{
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+.hero-subtext{
+    margin-top: 1rem;
+    width:65%;
+    font-size: 1rem;
+    color: rgb(55, 55, 55);
+}
+.cta-button{
+    margin-top: 1rem;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #ff8514;
+    border: 2px #ff8716 solid;
+    width: 180px;
+}
+
+.cta-button-scanner{
+    background-color: #ff8716;
+    margin-top: 1rem;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #1f1f1f;
+    border: 2px #ff8716 solid !important;
+    width: 150px;
+}
+.cta-button-scanner:hover{
+    background-color: #ff9029;
+
+}
+
+
+.rounded-pill{
+    width:150px;
+}
+
+@media screen and (max-width:600px) {
+    .hero-section{
+        padding: 1rem;
+    }
+    .hero-subtext{
+        width:100%
+    }
+}
+
+
+/* ******************************************* END OF HERO SECTION STYLING ****************************************** */
+
+
+/* ****************************************** GALLERY SECTION STYLING ***************************************** */
+
+#gallery-section{
+    height: 500px;
+    background-color: rgb(239, 239, 239);
+    position: relative;
+}
+.gallery{
+    column-count: 4;
+    column-gap: 1rem;
+}
+.gallery-item{
+    break-inside: avoid;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.gallery-item img{
+    display: block;
+    width: 100%;
+}
+
+
+@media screen and (max-width:550px) {
+    .gallery{
+        column-count: 1;
+    }
+}
+
+@media screen and (min-width:551px) {
+    .gallery{
+        column-count: 2;
+    }
+}
+@media screen and (min-width:701px) {
+    .gallery{
+        column-count: 3;
+    }
+}
+
+@media screen and (min-width:901px) {
+    .gallery{
+        column-count: 4;
+    }
+}
+
+/* ****************************************** END OF GALLERY SECTION STYLING ***************************************** */
+
+
+/* ***************************************** MEDIA QUARIES FOR RESPONSIVENESS ***************************************** */
+
+@media screen and (max-width:766px) {
+    .home-navbar{
+        position: relative;
+    }
+    .hero-section{
+        padding: 1rem;
+        height: 85vh;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .home-navbar{
+        position: absolute;
+    }
+}

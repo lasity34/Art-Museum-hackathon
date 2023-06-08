@@ -1,0 +1,26 @@
+button{
+     margin-top: 1em;
+  transition-duration: 0.4s;
+
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: grey;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+    
+}
+
+#collection_button {
+  background-color: white;
+}
+
+.collection_button_container {
+  display: flex;
+  align-items: center;
+}
