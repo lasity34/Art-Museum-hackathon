@@ -1,0 +1,19 @@
+/* Set the background color of the container */
+.container {
+    background-color: #f4f4f4;
+    
+}
+
+/* Style the heading */
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+/* Style the collection display */
+.collection_display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
