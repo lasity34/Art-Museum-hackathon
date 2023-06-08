@@ -11,6 +11,19 @@
         <link rel="stylesheet" href="css/scanner.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
+
+    <style>
+        @media screen and (max-width:700px) {     
+            .art-img{
+                height: 100% !important;
+            }
+            body{
+                margin-top: 2rem;
+            }
+        }
+    </style>
+
+
     <body style="margin: 0;padding: 0;">
 
         <nav class="navbar navbar-expand-lg" style="background-color: #FFD467" >
@@ -39,7 +52,7 @@
         </center>
       </div>
 
-        <div class="scanned-text-info-wrapper">
+        <div style="width: 100vw;" class="scanned-text-info-wrapper">
 
 
         </div>
@@ -48,15 +61,12 @@
 
               {{#each this}}
               <div  style="width: 100%;margin:0;padding: 0;" class=" art-info-container ">
-                <div class="row">
-                    <div class="row" >
-                        <h2 id="sections"
-                            style="margin-left: 5px; color: rgb(79, 79, 79); margin-top: 0cm; margin-bottom: 0cm;text-align:left;">
-                        </h2>
-                        <div class="col-md-6">
-                            <img style="height: 80vh;" src="{{this.img}}" alt="Your Image" class="img-fluid">
+                <div style="width:100%" class="row">
+                 
+                        <div style="margin:0" class="col-md-6">
+                            <img style="height: 80vh;width:100%" src="{{this.img}}" alt="Your Image" class="img-fluid art-img ">
                         </div>
-                        <div style="padding:1rem" class="col-md-6">
+                        <div style="padding:3rem 1rem 1rem 3rem" class="col-md-6">
                             <h2>{{title}}</h2>
                             <h6 style="color:gray;margin-top: 0.7rem;margin-top:1rem;">{{this.artist}}</h6>
         
@@ -80,7 +90,7 @@
                             
                             <button onclick="location.reload()" style="border-radius:0;font-size:0.9rem" class="btn btn-dark btn-lg"> Scan Another Item </button>
                         </div>
-                    </div>
+                  
                 </div>
             </div>
             {{/each}}
