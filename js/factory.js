@@ -8,14 +8,13 @@ function art_factory(collection_input, scanned_count_input, scanned_id_input) {
     let louvre_items = data().getData() ;
 
     const art_item = [];
-    const scanned_count = scanned_count_input || {};
+    const scanned_count =  scanned_count_input ? scanned_count_input : {};
     const user_collection = collection_input || [];
     const all_items_by_category = {};
     let locations = [];
     let currentLocation = "";
     let scanned_ids = scanned_id_input ? new Set(scanned_id_input) : new Set();
-    console.log(scanned_ids);
-
+   
     let last_scanned_category;
     let last_scanned_artist;
 
@@ -36,7 +35,10 @@ function art_factory(collection_input, scanned_count_input, scanned_id_input) {
                 scanned_ids.add(input); // add the ID to the set
                 scanned_count[found_item.category] = (scanned_count[found_item.category] || 0) + 1;
                 scanned_count[found_item.artist] = (scanned_count[found_item.artist] || 0) + 1;
+                console.log('scanned_count inside selected_art after updating:', scanned_count);
             }
+
+           
         }
     }
 
@@ -61,6 +63,7 @@ function art_factory(collection_input, scanned_count_input, scanned_id_input) {
     //   This will track the number of art pieces scanned per that category
     function get_scanned_count_by_category() {
         if (last_scanned_category) {
+            console.log('scanned_count inside get_scanned_count_by_category:', scanned_count);
             return `${scanned_count[last_scanned_category] || 0} out of ${louvre_items.filter((item) => item.category === last_scanned_category).length} ${last_scanned_category} has been scanned`;
         } else {
             return "No items have been scanned yet.";
@@ -75,7 +78,7 @@ function art_factory(collection_input, scanned_count_input, scanned_id_input) {
             return "No items have been scanned yet.";
         }
     }
-    console.log(art_item);
+    
     function new_art_item() {
         return art_item;
     }
@@ -87,6 +90,7 @@ function art_factory(collection_input, scanned_count_input, scanned_id_input) {
     function get_all_items_by_category() {
         return all_items_by_category;
     }
+
 
     function scanned__category_count() {
         return scanned_count;

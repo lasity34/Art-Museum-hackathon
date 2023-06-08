@@ -5,11 +5,11 @@ let art_collection = localStorage.getItem("user_collection")
   : [];
 let scanned_count = localStorage.getItem("scanned_count")
   ? JSON.parse(localStorage.getItem("scanned_count"))
-  : [];
+  : {};
   let scanned_id = localStorage.getItem("scanned_id")
   ? JSON.parse(localStorage.getItem("scanned_id"))
   : [];
-
+console.log(scanned_count)
 const art_inst = art_factory(art_collection, scanned_count, scanned_id);
 
 let artItems = [];
@@ -54,6 +54,7 @@ function displayScannedItem() {
   localStorage.setItem("scanned_id", JSON.stringify(scanned_id_array));
  
   scanned_count = art_inst.scanned__category_count();
+  
   localStorage.setItem("scanned_count", JSON.stringify(scanned_count));
 
   let scannedInfoWrapper = document.querySelector(".scanned-text-info-wrapper");
