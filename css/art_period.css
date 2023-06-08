@@ -6,7 +6,7 @@ body {
 
 }
 
-.navbar {
+/* .navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,14 +14,13 @@ body {
   margin-top: 25px;
   margin-left: 25px;
   border: 1px solid grey;
-}
+} */
 
-nav ul {
+/* nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  /* Display the list items horizontally */
 }
 
 
@@ -30,7 +29,7 @@ nav li {
 }
 
 /* Style the links */
-nav a {
+/* nav a {
   color: #333;
   text-decoration: none;
   padding: 5px;
@@ -39,7 +38,7 @@ nav a {
 nav a:hover {
   color: #000;
   background-color: #ff8514;
-}
+} */ */
 
 .myLogo {
   margin-top: 25px;
