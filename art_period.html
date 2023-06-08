@@ -1,106 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Art Periods</title>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" /> -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art Periods</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+        <link href="./css/art_period.css" rel="stylesheet" />
 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- <link rel="stylesheet" href="css/contact_us.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 
-  <link href="./css/art_period.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        <script id="artwork-template" type="text/x-handlebars-template">
+            {{#each this}}
+                <div class="category-box">
+                    <img class="art_period_image" src="{{this.0.img}}" />
+                    <h2>{{@key}}</h2>
+                </div>
+            {{/each}}
+        </script>
+        <script id="details-template" type="text/x-handlebars-template">
+            <div class="details-container">
+                {{#each this}}
+                    <div class="details-box">
+                        <img src="{{this.img}}" />
+                        <h2>{{this.title}}</h2>
 
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+                        <p>by {{this.artist}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        </script>
+    </head>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"
-    integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
 
+            .navbar {
+                background-color: #ffdb82;
+                box-shadow: 0 0 6px gray;
+                position: sticky;
+                /* top: 0; */
+                height: 70px;
+                padding: 0 2rem 0 2rem;
+            }
 
-  <script id="artwork-template" type="text/x-handlebars-template">
-      {{#each this}}
-        <div class="category-box">
-          <img class="art_period_image" src="{{this.0.img}}" />
-          <h2>{{@key}}</h2>
-        </div>
-      {{/each}}
-    </script>
-  <script id="details-template" type="text/x-handlebars-template">
-      <div class="details-container">
-        {{#each this}}
-          <div class="details-box">
-            <img src="{{this.img}}">
-            <h2>{{this.title}}</h2>
-         
-            <p>by {{this.artist}}</p>
-          </div>
-        {{/each}}
-      </div>
-  </script>
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
 
-</head>
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+            }
 
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #ffdb82 ; box-shadow: 0 0 6px gray;" >
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img class="" style="border-radius: 50%;"  src="images/logo.jpg" alt="" width="50" height="50">
-  </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-          <a class="nav-link " aria-current="page" href="index.html">Home</a>
-          <a class="nav-link" href="collection.html">My Collection</a>
-          <a class="nav-link active" href="art_period.html">Art Period</a>
-          <a class="nav-link" href="contact_us.html" >Get In Touch</a>
-      </div>
-    </div>
-  </div>
-</nav>
+            .logo {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
 
-<body>
+            .navbar-toggler {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
 
+            .navbar-toggler:focus {
+                outline: none;
+            }
 
+            .navbar-collapse {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                flex-grow: 1;
+            }
 
+            .navbar-nav {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin: 0;
+            }
 
+            .nav-link {
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+            }
 
-  <h1>Art <span>Periods</span></h1>
-  <p>
-    Art is an integral part of human civilization, often reflecting the
-    culture, ideas, and beliefs of the time it was created. Europe and South
-    Africa, in particular, have rich histories of art, having produced some of
-    the world's most influential artists and iconic works. In this display, we
-    present a curated list of art periods from these regions, featuring a
-    representative artwork from each period. This collection provides a
-    snapshot of the evolution of art over centuries, showcasing the diversity
-    and creativity inherent in these cultural treasures.
-  </p>
-  <section>
-    <div id="art_period_display"></div>
-    <div style="width: 500px" id="reader" style="display: none"></div>
+            .nav-link.active {
+                font-weight: bold;
+            }
 
-    <div id="modal-root"></div>
-  </section>
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .navbar-collapse {
+                    display: none;
+                }
 
+                .navbar-nav {
+                    flex-direction: column;
+                    background-color: #f8f9fa;
+                    padding: 10px;
+                }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+                .nav-link {
+                    padding: 10px 0;
+                }
+            }
+        </style>
 
-  <!-- <script src="html5-qrcode.min.js"></script> -->
+        <nav class="navbar" id="myNavbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="images/logo.jpg" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" id="navbar-toggler">
+                    <span class="navbar-toggler-icon">
+                      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Menu / Menu_Alt_01">
+                        <path id="Vector" d="M12 17H19M5 12H19M5 7H19" stroke="#ff8716" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        </svg>
+                    </span>
+                </button>
+                <div class="navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a style="color: black" class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="collection.html">My Collection</a>
+                        <a class="nav-link active" href="art_period.html">Art Period</a>
+                        <a class="nav-link" href="contact_us.html">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <h1>Art <span>Periods</span></h1>
+        <p>Art is an integral part of human civilization, often reflecting the culture, ideas, and beliefs of the time it was created. Europe and South Africa, in particular, have rich histories of art, having produced some of the world's most influential artists and iconic works. In this display, we present a curated list of art periods from these regions, featuring a representative artwork from each period. This collection provides a snapshot of the evolution of art over centuries, showcasing the diversity and creativity inherent in these cultural treasures.</p>
+        <section>
+            <div id="art_period_display"></div>
+            <div style="width: 500px" id="reader" style="display: none"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
+            <div id="modal-root"></div>
+        </section>
 
-    <script src="js/data.js"></script>
-    <script src="js/factory.js"></script>
-    <script src="js/main.DOM.js"></script>
-</body>
+        <script>
+            const navbarToggler = document.getElementById("navbar-toggler");
+            const navbarCollapse = document.getElementById("navbarNavAltMarkup");
 
+            navbarToggler.addEventListener("click", () => {
+                navbarCollapse.style.display = navbarCollapse.style.display === "none" ? "flex" : "none";
+            });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+        <!-- <script src="html5-qrcode.min.js"></script> -->
+
+        <script src="js/data.js"></script>
+        <script src="js/factory.js"></script>
+        <script src="js/main.DOM.js"></script>
+    </body>
 </html>
