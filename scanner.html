@@ -90,6 +90,22 @@
                                 <button  style="border-radius:0;font-size:0.9rem" class="btn btn-outline-secondary" id="collection_button" data-art-id="{{this.id}}"> Add to collection</button>
                                 <button onclick="location.reload()" style="border-radius:0;font-size:0.9rem" class="btn btn-dark btn-lg"> Scan Another Item </button>
                             </div>
+
+                            <hr>
+                            <p>Similar Art Items can be found at these locations</p>
+                            <div>
+                                <div class="row">
+                                    {{#each locations}}
+                                    <div  class="col-4">
+                                        <div style="margin-bottom:1rem" class="card">
+                                            <div class="card-body">
+                                                {{this}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
                             
                         </div>
                   
