@@ -97,7 +97,7 @@ describe("Working with selected values", function () {
         ];
 
         artPiece.setLocations(myScanned);
-        assert.deepEqual(["Exhibhition room B", "Exhibhition room B", "Exhibhition room A", "Exhibhition room B", "Atrium", "Atrium", "Exhibhition room A"], artPiece.getLocations());
+        assert.deepEqual(["Exhibhition room B", "Exhibhition room A","Atrium" ], artPiece.getLocations());
     });
 
     it("should get all the locations of art work with the same category of the scanned art ", function () {
