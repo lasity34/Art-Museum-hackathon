@@ -17,14 +17,18 @@
                     <a class="navbar-brand" href="index.html">
                         <img class="" style="border-radius: 50%;"  src="images/logo.jpg" alt="" width="50" height="50">
                     </a>
-                    <button style="border: none;box-shadow: none;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Menu / Menu_Alt_01">
-                        <path id="Vector" d="M12 17H19M5 12H19M5 7H19" stroke="#ff8716" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                        </svg>
+                    <!-- <button style="border: none;box-shadow: none;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      
+                    </button> -->
+
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Menu / Menu_Alt_01">
+                            <path id="Vector" d="M12 17H19M5 12H19M5 7H19" stroke="#ff8716" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
                     </button>
-                    <div style="background-color: #FFD467;" class="collapse navbar-collapse" id="navbarNav">
+                    <div style="background-color: #fcd778;" class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <a class="nav-link active " aria-current="page" href="index.html">Home</a>
                             <a class="nav-link" href="collection.html">My Collection</a>
@@ -32,6 +36,30 @@
                             <a class="nav-link"href="contact_us.html" >Get In Touch</a>
                         </ul>
                     </div>
+
+
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                            <a style="text-decoration: none;color: rgb(37, 37, 37);font-weight: 600;" href="index.html">
+                                <img class="" style="border-radius: 50%;"  src="images/logo.jpg" alt="" width="50" height="50">
+                                &nbsp;
+                                S.A Art Museum
+                            </a> 
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav">
+                            <a class="nav-link active " aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="collection.html">My Collection</a>
+                            <a class="nav-link" href="art_period.html">Art Period</a>
+                            <a class="nav-link"href="contact_us.html" >Get In Touch</a>
+                        </ul>
+                      </div>
+                    </div>
+
+
                 </div>
             </nav>
 
