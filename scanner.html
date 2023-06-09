@@ -46,7 +46,7 @@
             </div>
           </nav>
 
-      <div class="scanner-wrapper">
+      <div style="color:#262626" class="scanner-wrapper">
         <center>
             <h2>Scan Art Piece</h2>
             <div style="border: none;" class="col-12 col-sm-10 col-md-6 col-lg-4" id="reader"></div>
@@ -65,7 +65,7 @@
                 <div style="width:100%;margin:0;padding:0" class="row">
                  
                         <div style="margin:0;padding:0" class="col-md-6">
-                            <img style="height: 80vh;width:100%" src="{{this.img}}" alt="Your Image" class="img-fluid art-img ">
+                            <img style="height: 100vh;width:100%" src="{{this.img}}" alt="Your Image" class="img-fluid art-img ">
                         </div>
 
 
@@ -74,7 +74,7 @@
                             <h6 style="color:gray;margin-top: 0.7rem;margin-top:1rem;">{{this.artist}}</h6>
         
                             <p style="color:gray;margin-top:1rem;font-size: 0.9rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
                                     <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
                                     <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
                                   </svg> {{this.category}}
@@ -84,21 +84,30 @@
                              {{this.description}}
                             </p>
         
-                            <p>{{this.count}}</p>
+                            <p> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-info-circle-fill text-primary" viewBox="0 0 16 16">
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                  </svg>
+                                  &nbsp;
+                                {{this.count}}
+                                
+                            </p>
                       
                             <div>
-                                <button  style="border-radius:0;font-size:0.9rem" class="btn btn-outline-secondary" id="collection_button" data-art-id="{{this.id}}"> Add to collection</button>
+                                <button  style="border-radius:0;font-size:0.9rem;margin-right:0.5rem" class="btn btn-outline-secondary btn-lg " id="collection_button" data-art-id="{{this.id}}"> Add to collection</button>
                                 <button onclick="location.reload()" style="border-radius:0;font-size:0.9rem" class="btn btn-dark btn-lg"> Scan Another Item </button>
                             </div>
 
                             <hr>
-                            <p>Similar Art Items can be found at these locations</p>
+                            <center>
+                                <p style="color:#262626;margin:1rem" >Find more of <span style="font-weight:600;color:black" > {{this.category}} </span> from these locations</p>
+                            </center>
                             <div>
                                 <div class="row">
                                     {{#each locations}}
                                     <div  class="col-12 col-sm-6 col-md-4">
                                         <div style="margin-bottom:1rem" class="card">
-                                            <div class="card-body">
+                                            <div align="center" class="card-body">
                                                 {{this}}
                                             </div>
                                         </div>

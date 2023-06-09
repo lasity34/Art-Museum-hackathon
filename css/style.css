@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Playfair:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
 
 body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
-h1{
+
+p{
+    font-size: 0.9rem;
+}
+.card-body{
+    font-size: 0.85rem;
+}
+
+h1,h2{
     font-family: "Playfair";
 }
 

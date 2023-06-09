@@ -74,6 +74,7 @@
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
+                display: none;
             }
 
             .navbar-toggler:focus {
@@ -82,7 +83,7 @@
 
             .navbar-collapse {
                 display: flex;
-                justify-content: flex-end;
+                justify-content:flex-start;
                 align-items: center;
                 flex-grow: 1;
             }
@@ -97,11 +98,11 @@
             .nav-link {
                 padding: 10px;
                 text-decoration: none;
-                color: black;
+                color: rgb(63, 63, 63);
             }
 
             .nav-link.active {
-                font-weight: bold;
+                color: black;
             }
 
             /* Responsive Styles */
@@ -110,10 +111,15 @@
                     display: none;
                 }
 
+                .navbar-toggler{
+                    display: block;
+                }
+
                 .navbar-nav {
                     flex-direction: column;
-                    background-color: #f8f9fa;
+                    background-color: #338ae0;
                     padding: 10px;
+                    width: 100%;
                 }
 
                 .nav-link {
@@ -138,7 +144,7 @@
                 </button>
                 <div class="navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a style="color: black" class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link" href="collection.html">My Collection</a>
                         <a class="nav-link active" href="art_period.html">Art Period</a>
                         <a class="nav-link" href="contact_us.html">Get In Touch</a>
